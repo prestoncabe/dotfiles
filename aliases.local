@@ -1,0 +1,11 @@
+# tmux
+alias t="tmux -2 attach || tmux -2"
+
+# git
+alias gs="git status"
+
+# bundler
+alias bi="bundle install"
+
+# editor
+alias e='$EDITOR'
