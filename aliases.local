@@ -3,6 +3,10 @@ alias t="tmux -2 attach || tmux -2"
 
 # git
 alias gs="git status"
+alias gf="git fetch"
+alias gc="git commit"
+alias ga="git add"
+alias gaa="git add ."
 
 # bundler
 alias bi="bundle install"
