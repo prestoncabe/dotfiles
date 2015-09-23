@@ -15,3 +15,6 @@ alias bi="bundle install"
 
 # editor
 alias e='$EDITOR'
+
+# sourcetree
+alias st="stree"
