@@ -1,17 +1,26 @@
+# unix
+alias rmrf="rm -rf"
+alias j="jobs"
+alias c="clear"
+
 # tmux
 alias t="tmux -2 attach || tmux -2"
 
 # git
 alias gs="git status"
+alias gd="git diff"
+alias gb="git branch"
 alias gf="git fetch"
 alias gc="git commit"
 alias ga="git add"
 alias gaa="git add ."
 alias gpl="git pull"
 alias gl="git log"
+alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 # bundler
 alias bi="bundle install"
+alias bu="bundle update"
 
 # editor
 alias e='$EDITOR'
@@ -19,5 +28,3 @@ alias e='$EDITOR'
 # sourcetree
 alias st="stree"
 
-# other
-alias rmrf="rm -rf"
