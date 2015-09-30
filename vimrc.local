@@ -1,5 +1,26 @@
-" Look 'n feel
+" Basic look 'n feel
 syntax enable
 set background=dark
 colorscheme solarized
 
+set cursorline
+set relativenumber
+set noshowmode " since we're using the lightline plugin
+
+
+" Hack to speed up lightline plugin
+inoremap <special> <Esc> <Esc>hl
+
+
+" Change cursor in insert mode
+" (assumes iTerm2 on OS X):
+" http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+if system("if [ $TMUX ]; then echo 1; else echo 0; fi")
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
