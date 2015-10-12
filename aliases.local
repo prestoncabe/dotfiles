@@ -3,6 +3,9 @@ alias rmrf="rm -rf"
 alias j="jobs"
 alias c="clear"
 
+# bdt
+alias pr="cd ~/bdt/prism/"
+
 # tmux
 alias t="tmux -2 attach || tmux -2"
 
