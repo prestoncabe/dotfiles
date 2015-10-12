@@ -1,0 +1,4 @@
+# use pick to quickly find file to edit in vim
+function vp {
+  vim $(ag -l | pick)
+}

@@ -33,3 +33,6 @@ alias st="stree"
 
 # the siler searcher
 alias agl="ag --pager \"less -R\""
+
+# pick
+alias p="pick"
