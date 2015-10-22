@@ -4,7 +4,7 @@ alias j="jobs"
 alias c="clear"
 
 # bdt
-alias pr="cd ~/bdt/prism/"
+alias cdp="cd ~/bdt/prism/"
 
 # tmux
 alias t="tmux -2 attach || tmux -2"
