@@ -36,3 +36,6 @@ alias agl="ag --pager \"less -R\""
 
 # pick
 alias p="pick"
+
+# sshrc
+alias l="sshrc"

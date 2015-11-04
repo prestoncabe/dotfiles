@@ -2,3 +2,6 @@
 function vp {
   vim $(ag -l | pick)
 }
+
+# use ssh tab completion for sshrc
+compdef sshrc=ssh
