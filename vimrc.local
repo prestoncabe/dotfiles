@@ -59,3 +59,10 @@ nnoremap <Leader>p] :call PickTag()<CR>
 
 " Toggle Git Blame window
 map <Leader>gb :Gblame<CR>
+
+
+" Grep stuff from https://robots.thoughtbot.com/faster-grepping-in-vim
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap <Leader>k :Ag<SPACE>
