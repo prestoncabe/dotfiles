@@ -70,3 +70,11 @@ nnoremap <Leader>k :Ag<SPACE>
 
 " vim-rspec command
 let g:rspec_command = "!bundle exec rspec {spec}"
+
+
+augroup vimrc.localEx
+  autocmd!
+
+  " Set syntax highlighting for BDT PRISM letters
+  autocmd BufRead,BufNewFile *.ltr set filetype=ruby
+augroup END
