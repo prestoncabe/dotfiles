@@ -31,7 +31,7 @@ alias bu="bundle update"
 # sourcetree
 alias st="stree"
 
-# the siler searcher
+# the silver searcher
 alias agl="ag --pager \"less -R\""
 
 # pick
