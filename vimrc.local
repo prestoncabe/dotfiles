@@ -55,3 +55,7 @@ nnoremap <Leader>pv :call PickFileVerticalSplit()<CR>
 nnoremap <Leader>pt :call PickFileTab()<CR>
 nnoremap <Leader>pb :call PickBuffer()<CR>
 nnoremap <Leader>p] :call PickTag()<CR>
+
+
+" Toggle Git Blame window
+map <Leader>gb :Gblame<CR>
