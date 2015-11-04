@@ -5,6 +5,7 @@ alias c="clear"
 
 # bdt
 alias cdp="cd ~/bdt/prism/"
+alias cdc="cd ~/bdt/checkins/"
 
 # tmux
 alias t="tmux -2 attach || tmux -2"
