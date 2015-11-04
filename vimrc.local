@@ -49,9 +49,9 @@ let g:lightline = {
 
 
 " Pick seems to be better than CtrlP at fuzzy file finding
-nnoremap <Leader>p :call PickFile()<CR>
-nnoremap <Leader>s :call PickFileSplit()<CR>
-nnoremap <Leader>v :call PickFileVerticalSplit()<CR>
-nnoremap <Leader>t :call PickFileTab()<CR>
-nnoremap <Leader>b :call PickBuffer()<CR>
-nnoremap <Leader>] :call PickTag()<CR>
+nnoremap <Leader>pe :call PickFile()<CR>
+nnoremap <Leader>ps :call PickFileSplit()<CR>
+nnoremap <Leader>pv :call PickFileVerticalSplit()<CR>
+nnoremap <Leader>pt :call PickFileTab()<CR>
+nnoremap <Leader>pb :call PickBuffer()<CR>
+nnoremap <Leader>p] :call PickTag()<CR>
