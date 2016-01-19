@@ -58,8 +58,11 @@ nnoremap <Leader>pb :call PickBuffer()<CR>
 nnoremap <Leader>p] :call PickTag()<CR>
 
 
-" Toggle Git Blame window
-map <Leader>gb :Gblame<CR>
+" Git
+nnoremap <Leader>g :Gstatus<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>ga :Gwrite<CR>
+nnoremap <Leader>gc :Gcommit -v<CR>
 
 
 " Grep stuff from https://robots.thoughtbot.com/faster-grepping-in-vim
