@@ -9,8 +9,8 @@ set relativenumber
 set noshowmode " since we're using the lightline plugin
 
 
-" Hack to speed up lightline plugin
-inoremap <special> <Esc> <Esc>hl
+" Speed up switching back to normal mode
+set timeoutlen=1000 ttimeoutlen=0
 
 
 " Change cursor in insert mode
