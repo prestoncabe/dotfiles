@@ -1,3 +1,5 @@
 [user]
   name = Preston Cabe
   email = prestoncabe@gmail.com
+[core]
+  trustctime = false
