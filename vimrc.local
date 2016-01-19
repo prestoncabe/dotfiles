@@ -50,6 +50,7 @@ let g:lightline = {
 
 
 " Pick seems to be better than CtrlP at fuzzy file finding
+nnoremap <Leader>p :echoe "Use Leader-pe"<CR>
 nnoremap <Leader>pe :call PickFile()<CR>
 nnoremap <Leader>ps :call PickFileSplit()<CR>
 nnoremap <Leader>pv :call PickFileVerticalSplit()<CR>
