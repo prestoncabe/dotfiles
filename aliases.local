@@ -6,6 +6,7 @@ alias c="clear"
 # bdt
 alias cdp="cd ~/bdt/prism/"
 alias cdc="cd ~/bdt/checkins/"
+alias cdd="cd ~/bdt/dispersion/"
 alias bdt="cd ~/bdt && tat"
 
 # git
