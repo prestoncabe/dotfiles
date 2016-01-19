@@ -38,3 +38,9 @@ alias p="pick"
 
 # sshrc
 alias l="sshrc"
+
+# ssh to multiple servers at once!
+alias lp="ssh-multi {pa,md,nyc,co,sc}.prism.local"
+alias lb="ssh-multi {pennsylvania,maryland,nyc,co}.betaprism.local"
+alias lt="ssh-multi {pa,md,nyc,co,sc}-training.betaprism.local"
+
