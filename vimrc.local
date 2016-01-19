@@ -34,7 +34,7 @@ let g:lightline = {
       \             [ 'fugitive', 'readonly', 'relativepath', 'modified' ] ]
       \ },
       \ 'inactive': {
-      \   'left': [ ['relativepath' ] ]
+      \   'left': [ ['relativepath', 'modified' ] ]
       \ },
       \ 'component': {
       \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
