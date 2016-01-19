@@ -74,7 +74,7 @@ nnoremap <Leader>k :Ag<SPACE>
 
 
 " vim-rspec command
-let g:rspec_command = "!bundle exec rspec {spec}"
+let g:rspec_command = "!rspec -f d {spec}"
 
 
 augroup vimrc.localEx
