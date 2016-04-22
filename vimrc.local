@@ -82,8 +82,4 @@ augroup vimrc.localEx
 
   " Set syntax highlighting for BDT PRISM letters
   autocmd BufRead,BufNewFile *.ltr set filetype=ruby
-
-  " Automatically keep track of session in case of crash
-  autocmd VimEnter * Obsession Session.vim
-  autocmd VimLeave * if filereadable("./Session.vim") | !rm Session.vim | endif
 augroup END
