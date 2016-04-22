@@ -15,3 +15,6 @@ bind c new-window -c "#{pane_current_path}"
 set -g pane-active-border-fg magenta
 set -g status-right '#{session_name} '
 setw -g clock-mode-style 12
+
+# address vim mode switching delay (http://superuser.com/a/252717/65504)
+set -s escape-time 0
