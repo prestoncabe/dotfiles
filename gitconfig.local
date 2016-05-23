@@ -3,3 +3,5 @@
   email = prestoncabe@gmail.com
 [core]
   trustctime = false
+[push]
+  followTags = true
