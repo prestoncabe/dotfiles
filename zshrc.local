@@ -5,3 +5,6 @@ function pe {
 
 # use ssh tab completion for sshrc
 compdef sshrc=ssh
+
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
