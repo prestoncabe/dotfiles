@@ -85,10 +85,6 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap <Leader>k :Ag<SPACE>
 
 
-" vim-rspec command
-let g:rspec_command = "!rspec -f d {spec}"
-
-
 augroup vimrc.localEx
   autocmd!
 
