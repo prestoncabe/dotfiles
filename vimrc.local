@@ -49,14 +49,26 @@ let g:lightline = {
       \ }
 
 
-" Pick seems to be better than CtrlP at fuzzy file finding
-nnoremap <Leader>p :echoe "Use Leader-pe"<CR>
-nnoremap <Leader>pe :call PickFile()<CR>
-nnoremap <Leader>ps :call PickFileSplit()<CR>
-nnoremap <Leader>pv :call PickFileVerticalSplit()<CR>
-nnoremap <Leader>pt :call PickFileTab()<CR>
-nnoremap <Leader>pb :call PickBuffer()<CR>
-nnoremap <Leader>p] :call PickTag()<CR>
+" New hotness for fuzzy finding files
+nnoremap <Leader>fe :Files<CR>
+nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>ft :Tags<CR>
+nnoremap <Leader>p :echoe "Use <Leader>fe"<CR>
+nnoremap <Leader>pe :echoe "Use <Leader>fe"<CR>
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 
 " Git
