@@ -106,4 +106,16 @@ augroup vimrc.localEx
 
   " Set syntax highlighting for BDT PRISM letters
   autocmd BufRead,BufNewFile *.ltr set filetype=ruby
+
+  " Make it more obvious which split you're in
+  autocmd WinEnter * call WinEnterHighlight()
+  autocmd WinLeave * call WinLeaveUnHighlight()
+
+  function WinEnterHighlight()
+    set relativenumber
+  endfunction
+
+  function WinLeaveUnHighlight()
+    set norelativenumber
+  endfunction
 augroup END
