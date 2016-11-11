@@ -2,6 +2,7 @@
 alias rmrf="rm -rf"
 alias j="jobs"
 alias c="clear"
+alias ll="ls -alh"
 
 # bdt
 alias cdp="cd ~/bdt/prism/"
