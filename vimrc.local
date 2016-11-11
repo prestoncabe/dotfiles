@@ -83,6 +83,7 @@ nnoremap <Leader>g :Gstatus<CR>
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>ga :Gwrite<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
+nnoremap <Leader>gd :Gdiff<CR>
 
 
 " Grep stuff from https://robots.thoughtbot.com/faster-grepping-in-vim
