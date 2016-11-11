@@ -50,9 +50,10 @@ let g:lightline = {
 
 
 " New hotness for fuzzy finding files
-nnoremap <Leader>fe :Files<CR>
-nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>ft :Tags<CR>
+let g:fzf_command_prefix = 'Fzf'
+nnoremap <Leader>fe :FzfFiles<CR>
+nnoremap <Leader>fb :FzfBuffers<CR>
+nnoremap <Leader>ft :FzfTags<CR>
 nnoremap <Leader>p :echoe "Use <Leader>fe"<CR>
 nnoremap <Leader>pe :echoe "Use <Leader>fe"<CR>
 
