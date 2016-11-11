@@ -93,6 +93,14 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap <Leader>k :Ag<SPACE>
 
 
+" RSpec runner customization
+let test#ruby#rspec#options = {
+  \ 'nearest': '--format documentation',
+  \ 'file':    '--format documentation',
+  \ 'suite':   '--tag ~slow',
+  \}
+
+
 augroup vimrc.localEx
   autocmd!
 
