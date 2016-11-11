@@ -4,9 +4,15 @@ set background=dark
 colorscheme solarized
 
 set cursorline
+
 set scrolloff=3
 set relativenumber
 set noshowmode " since we're using the lightline plugin
+
+
+" Emacs shortcuts for moving to beginning/end of line
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 
 
 " Speed up switching back to normal mode
