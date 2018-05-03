@@ -6,9 +6,7 @@ alias ll="ls -alh"
 
 # bdt
 alias cdp="cd ~/bdt/prism/"
-alias cdc="cd ~/bdt/checkins/"
-alias cdd="cd ~/bdt/dispersion/"
-alias bdt="cd ~/bdt && tat"
+alias bdt="cd ~/bdt/prism/ && tat"
 
 # git
 alias gs="git status"
