@@ -53,5 +53,15 @@ alias p="pick"
 export EDITOR=vim
 alias e=$EDITOR
 
+# use 'g' instead of 'git'
+g () {
+  if [[ $# -gt 0 ]]
+    then
+      git "$@"
+  else
+    git status
+      fi
+}
+
 source ~/.profile
 
