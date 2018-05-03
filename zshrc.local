@@ -8,3 +8,8 @@ compdef sshrc=ssh
 
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
+# Enable Ctrl-x-e to edit command line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
