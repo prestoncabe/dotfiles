@@ -45,7 +45,7 @@ alias f="fzf-tmux"
 alias l="sshrc"
 
 # ssh to multiple servers at once!
-alias lp="ssh-multi {pa,md,nyc,co,sc}.prism.local"
-alias lb="ssh-multi {pa,md,nyc,co}.betaprism.local"
-alias lt="ssh-multi {pa,md,nyc,co,sc}-training.betaprism.local"
+alias lm="ssh-multi"
+alias lp="ssh-multi {pa,md,nyc,co,sc,nc,ct}.prism.local"
+alias lt="ssh-multi {pa,md,nyc,co,sc,nc,ct}-training.betaprism.local"
 
