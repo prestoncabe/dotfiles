@@ -21,3 +21,10 @@ setw -g clock-mode-style 12
 
 # address vim mode switching delay (http://superuser.com/a/252717/65504)
 set -s escape-time 0
+
+# mouse stuff
+set -g mouse on
+
+# something for copy/paste in vim
+set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+
