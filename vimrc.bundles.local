@@ -1,3 +1,5 @@
+UnPlug 'ctrlp.vim'
+
 Plug 'vim-scripts/ZoomWin'
 Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
@@ -9,3 +11,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'tpope/vim-vinegar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
