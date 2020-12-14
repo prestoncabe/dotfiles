@@ -1,7 +1,26 @@
 [user]
   name = Preston Cabe
-  email = prestoncabe@gmail.com
+  email = pcabe@bdtrust.org
 [core]
   trustctime = false
 [push]
   followTags = true
+[http]
+	cookiefile = /Users/pcabe/.gitcookies
+[gitflow "feature.finish"]
+	keep = true
+	push = true
+[gitflow "feature.delete"]
+	remote = true
+# [gitflow "init"]
+# 	defaults = true
+[gitflow "hotfix.finish"]
+	keep = true
+	push = true
+[gitflow "hotfix.delete"]
+	remote = true
+[gitflow "release.finish"]
+	keep = true
+	push = true
+[gitflow "release.delete"]
+	remote = true

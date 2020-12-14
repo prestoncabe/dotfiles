@@ -1,13 +1,7 @@
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */Users/pcabe/.fzf/bin* ]]; then
-  export PATH="$PATH:/Users/pcabe/.fzf/bin"
-fi
-
-# Man path
-# --------
-if [[ ! "$MANPATH" == */Users/pcabe/.fzf/man* && -d "/Users/pcabe/.fzf/man" ]]; then
-  export MANPATH="$MANPATH:/Users/pcabe/.fzf/man"
+  export PATH="${PATH:+${PATH}:}/Users/pcabe/.fzf/bin"
 fi
 
 # Auto-completion
@@ -16,5 +10,4 @@ fi
 
 # Key bindings
 # ------------
-# source "/Users/pcabe/.fzf/shell/key-bindings.zsh"
-
+source "/Users/pcabe/.fzf/shell/key-bindings.zsh"

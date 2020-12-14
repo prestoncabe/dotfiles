@@ -5,17 +5,20 @@ alias c="clear"
 alias ll="ls -alh"
 
 # bdt
-alias cdp="cd ~/bdt/prism/"
-alias bdt="cd ~/bdt/prism/ && tat"
+alias cdp="cd ~/code/prism/"
+alias code="cd ~/code/ && tat"
+alias bdt="echo 'use code alias instead'"
 
 # git
-alias gs="git status"
+# alias gs="git status" # gets in the way of ghostscript
 alias gd="git diff"
 alias gb="git branch"
 alias gbs="git branch --remote | ag"
 alias gco='git checkout $(git branch | cut -c 3- | fzf-tmux)'
 alias gco-="git checkout -"
 alias gf="git fetch"
+alias gfd="git fetch origin develop:develop" # updates develop without leaving current branch
+alias gfm="git fetch origin master:master" # updates master without leaving current branch
 alias gc="git commit -v"
 alias ga="git add"
 alias gaa="git add ."
@@ -25,8 +28,10 @@ alias gpu="git push -u"
 alias gpl="git pull"
 alias gl="git log"
 alias glg="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+alias glgfp="glg --first-parent"
 alias gm-="git merge -"
 alias gup="git up"
+alias gfl="git flow"
 
 # bundler
 alias bi="bundle install"
@@ -40,12 +45,88 @@ alias agl="ag --pager \"less -R\""
 
 # fzf (fuzzy finder)
 alias f="fzf-tmux"
+alias ef='vim $(fzf-tmux)'
 
 # sshrc
-alias l="sshrc"
+# alias l="sshrc"
 
 # ssh to multiple servers at once!
-alias lm="ssh-multi"
-alias lp="ssh-multi {pa,md,nyc,co,sc,nc,ct}.prism.local"
-alias lt="ssh-multi {pa,md,nyc,co,sc,nc,ct}-training.betaprism.local"
+# alias lm="ssh-multi"
+# alias lp="ssh-multi {pa,md,nyc,co,sc,nc,ct}.prism.local"
+# alias lt="ssh-multi {pa,md,nyc,co,sc,nc,ct}-training.betaprism.local"
+
+# Don't save commands to history that are prefixed with a space
+# https://superuser.com/questions/352788/how-to-prevent-a-command-in-the-zshell-from-being-saved-into-history
+# setopt HIST_IGNORE_SPACE
+
+# todo.txt
+# todotxt () {
+#   if [[ $# -gt 0 ]]
+#     then
+#       "/usr/local/opt/todo-txt/bin/todo.sh" "$@"
+#     else
+#       "/usr/local/opt/todo-txt/bin/todo.sh" ls | head -n1
+#   fi
+# }
+# alias t=" /usr/local/opt/todo-txt/bin/todo.sh" # doesn't save to history
+# # alias t=" todotxt" # doesn't save to history
+# # compdef t="/usr/local/opt/todo-txt/bin/todo.sh"
+# alias ta="t add"
+# alias tli='t ls | ag "^[0-9]" | ag -v ".*(\@|\+)"'
+# alias ti='tli | head -n1'
+# alias trm='t del'
+# alias tdo='t do'
+# alias tls='t ls'
+# alias tlsp='t lsprj'
+# alias tlsc='t lsc'
+#
+# journal ... expects stdin as the entry
+# append-to-journal='xargs -0 printf "\n## $(date "+%Y-%m-%d-%H-%M-%S")\n%s\n" >> /Users/pcabe/Dropbox/Documents/journal/Journal-$(date "+%Y-%m").txt'
+
+  if [ $commands[kubectl] ]; then
+    # FIXME: wish this would lazy load automatically when tabbing only, like it
+    # does with kubectl itself
+    if ! type __start_kubectl >/dev/null 2>&1; then
+      # source <(kubectl completion zsh)
+      # kubectl completion; use cache if updated within 24h
+      if [[ -n $HOME/.helmcompdump(#qN.mh+24) ]]; then
+        kubectl completion zsh > $HOME/.kubectlcompdump;
+      else
+        source $HOME/.kubectlcompdump;
+      fi;
+
+      compdef k=kubectl
+    fi
+
+    k() {
+
+      if [[ $# -gt 0 ]]
+        then
+          kubectl "$@"
+      else
+        local con=$(kubectl config current-context)
+          local ns=$(kubectl config view -o "jsonpath={.contexts[?(@.name==\"$(kubectl config current-context)\")].context.namespace}")
+
+          echo "Kubernetes"
+          echo "  Context:   $con"
+          echo "  Namespace: $ns"
+      fi
+    }
+
+    kn() {
+      kubectl config set-context $(kubectl config current-context) --namespace="$@"
+    }
+
+    # alias ke="kubectl exec -it"
+    ke() {
+      local podname=$(kubectl get pods | grep -m1 "$@" | cut -f 1 -d ' ')
+      kubectl exec -it "$podname" bash
+    }
+  fi
+
+
+# FIXME: I put this here because it doesn't work if I put it earlier in the
+# sourcing chain... but why?
+# use fzf for fuzzy file finding
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

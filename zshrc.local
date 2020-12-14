@@ -1,15 +1,54 @@
-# use pick to quickly find file to edit in vim
-function pe {
-  vim $(ag -l | pick)
-}
-
-# use ssh tab completion for sshrc
+# use ssh tab completion for sshrc and ssh-multi
 compdef sshrc=ssh
 
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+# so we get UTF-8 when SSHing from iPad??
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export PATH="/usr/local/opt/go@1.11/bin:$PATH"
+export GOPATH="${HOME}/.go"
+export GOROOT="/usr/local/Cellar/go/1.13.7/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+# an alternative way to the "e" alias that I'm still not sure about
+# e () {
+#   if [[ $# -gt 0 ]]
+#   then
+#     $EDITOR "$@"
+#   else
+#     $EDITOR "$(fzf-tmux)"
+#   fi
+# }
 
 # Enable Ctrl-x-e to edit command line
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
+export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/bin/python3"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# source ~/.git-flow-completion.zsh
+source '/usr/local/share/zsh/site-functions/git-flow-completion.zsh'
+
+# source <(helm completion zsh)
+# helm completion; use cache if updated within 24h
+if [[ -n $HOME/.helmcompdump(#qN.mh+24) ]]; then
+  helm completion zsh > $HOME/.helmcompdump;
+  source $HOME/.helmcompdump;
+else
+  source $HOME/.helmcompdump;
+fi;
+
+set -o emacs
+
+# show vi mode in shell prompt
+# function zle-line-init zle-keymap-select {
+#     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+#     RPS2=$RPS1
+#     zle reset-prompt
+# }
+#
+# zle -N zle-line-init
+# zle -N zle-keymap-select

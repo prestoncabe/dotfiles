@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+SHA=`git rev-parse HEAD`
+BUILD_ID=`gcloud container builds list --format json | jq --arg SHA "$SHA" '.[] | select(.sourceProvenance.resolvedRepoSource.commitSha == $SHA) | .id' | tr -d '"'`
+gcloud container builds log $BUILD_ID --stream

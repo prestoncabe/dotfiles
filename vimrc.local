@@ -1,6 +1,11 @@
 " Basic look 'n feel
 syntax enable
 set background=dark
+if !has('gui_running')
+  " fixes colors over ssh ¯\_(ツ)_/¯
+  " https://github.com/altercation/solarized/issues/107
+  let g:solarized_termtrans=1
+endif
 colorscheme solarized
 
 set cursorline
@@ -34,6 +39,10 @@ inoremap <C-e> <End>
 " Speed up switching back to normal mode
 set timeoutlen=1000 ttimeoutlen=0
 
+" Speed up ALE linting for large files
+let g:ale_cache_executable_check_failures = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 
 " Change cursor in insert mode
 " (assumes iTerm2 on OS X):
@@ -101,7 +110,6 @@ nnoremap <Leader>ga :Gwrite<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
-
 " Grep stuff from https://robots.thoughtbot.com/faster-grepping-in-vim
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -112,7 +120,7 @@ nnoremap <Leader>k :Ag<SPACE>
 let test#ruby#rspec#options = {
   \ 'nearest': '--format documentation',
   \ 'file':    '--format documentation',
-  \ 'suite':   '--tag ~slow',
+  \ 'suite':   '--fail-fast',
   \}
 
 
@@ -127,10 +135,12 @@ augroup vimrc.localEx
   autocmd WinLeave * call WinLeaveUnHighlight()
 
   function WinEnterHighlight()
-    set relativenumber
+    " set relativenumber
+    set cursorline
   endfunction
 
   function WinLeaveUnHighlight()
-    set norelativenumber
+    " set norelativenumber
+    set nocursorline
   endfunction
 augroup END
