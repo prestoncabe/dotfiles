@@ -104,8 +104,8 @@ let g:fzf_colors =
 
 
 " Git
-nnoremap <Leader>g :Gstatus<CR>
-nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>g :G<CR>
+nnoremap <Leader>gb :Git blame<CR>
 nnoremap <Leader>ga :Gwrite<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
 nnoremap <Leader>gd :Gdiff<CR>
