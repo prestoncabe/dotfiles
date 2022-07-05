@@ -120,7 +120,7 @@ alias ef='vim $(fzf-tmux)'
     # alias ke="kubectl exec -it"
     ke() {
       local podname=$(kubectl get pods | grep -m1 "$@" | cut -f 1 -d ' ')
-      kubectl exec -it "$podname" bash
+      kubectl exec -it "$podname" -- bash
     }
   fi
 
