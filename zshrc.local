@@ -20,11 +20,6 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 #   fi
 # }
 
-# Enable Ctrl-x-e to edit command line
-autoload -z edit-command-line
-zle -N edit-command-line
-bindkey "^X^E" edit-command-line
-
 export CLOUDSDK_PYTHON="/usr/local/opt/python@3.8/bin/python3"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
@@ -42,6 +37,11 @@ else
 fi;
 
 set -o emacs
+
+# Enable Ctrl-x-e to edit command line
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 
 # show vi mode in shell prompt
 # function zle-line-init zle-keymap-select {
