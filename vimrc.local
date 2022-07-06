@@ -128,7 +128,7 @@ augroup vimrc.localEx
   autocmd!
 
   " Set syntax highlighting for BDT PRISM letters
-  autocmd BufRead,BufNewFile *.ltr set filetype=ruby
+  " autocmd BufRead,BufNewFile *.ltr set filetype=ruby
 
   " Make it more obvious which split you're in
   autocmd WinEnter * call WinEnterHighlight()
